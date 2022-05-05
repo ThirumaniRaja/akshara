@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { PeriodicElement } from 'src/app/models/tableData';
+import {MatPaginator} from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {id: 1, role: 'General Manager', location: 'Sion', organization: 'TCE',gender:'male',vacany:'2',requirement:'Proficient in MS Office'},
@@ -14,6 +18,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {id: 10, role: 'Credit Manager', location: 'powai', organization: 'TCS',gender:'male',vacany:'3',requirement:'Credit manager'},
 ]
 
+
 @Component({
   selector: 'app-table-view',
   templateUrl: './table-view.component.html',
@@ -22,12 +27,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
  
 
-export class TableViewComponent implements OnInit {
+export class TableViewComponent implements OnInit, AfterViewInit {
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+  @ViewChild(MatPaginator) paginator: MatPaginator | any;
 
   displayedColumns: string[] = ['id', 'role', 'location', 'organization','gender','vacany','requirement'];
-  dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
 
   constructor() { }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   ngOnInit(): void {
   }
