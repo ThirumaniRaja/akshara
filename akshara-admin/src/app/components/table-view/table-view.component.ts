@@ -29,6 +29,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class TableViewComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  // resultData = new MatTableDataSource<PeriodicElement>();
+  resultData:any = [];
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
 
@@ -38,10 +41,27 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    console.log("ngAfterViewInit")
+    // this.resultData.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
+
+    console.log("ngAfterViewInit",this.resultData)
+    
   }
 
   ngOnInit(): void {
+    console.log("ngOnInit")
+    // const result = words.filter(word => word.length > 6);
+    this.resultData.push(this.dataSource);
+    console.log("ngOnInit",this.resultData)
+
+    this.resultData = this.resultData[0].filteredData.filter((word:any) => word.role === 'BPO');
+    this.resultData.paginator = this.paginator;
+    console.log("ngOnInit",this.resultData)
+
+    // this.dataSource.paginator = this.paginator;
+
+
   }
 
 }
