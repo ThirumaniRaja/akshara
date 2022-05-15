@@ -1,5 +1,9 @@
 
 <div>
+  <div>
+    <h1 class="table-header">JOB Details</h1>
+    <input type="text" (keyup)="filterData($event)">
+  </div>
   <table mat-table [dataSource]="resultData" class="mat-elevation-z8">
   
       <!--- Note that these columns can be defined in any order.

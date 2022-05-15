@@ -15,7 +15,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {id: 7, role: 'Credit Manager', location: 'Andheri', organization: 'WIPRO',gender:'male',vacany:'5',requirement:'Proficient in MS Excel'},
   {id: 8, role: 'Software Developer', location: 'Mahim', organization: 'ACCENTURE',gender:'all',vacany:'1',requirement:'AWS server handling'},
   {id: 9, role: 'Software Developer', location: 'powai', organization: 'ACCENTURE',gender:'all',vacany:'2',requirement:'DBMS manager'},
-  {id: 10, role: 'Credit Manager', location: 'powai', organization: 'TCS',gender:'male',vacany:'3',requirement:'Credit manager'},
+  {id: 10, role: 'CMS', location: 'powai', organization: 'TCS',gender:'male',vacany:'3',requirement:'Credit manager'},
 ]
 
 
@@ -42,25 +42,50 @@ export class TableViewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     console.log("ngAfterViewInit")
-    // this.resultData.paginator = this.paginator;
-    // this.dataSource.paginator = this.paginator;
-
     console.log("ngAfterViewInit",this.resultData)
     
   }
 
   ngOnInit(): void {
     console.log("ngOnInit")
-    // const result = words.filter(word => word.length > 6);
-    this.resultData.push(this.dataSource);
-    console.log("ngOnInit",this.resultData)
+  
+    this.getTableData()
 
-    this.resultData = this.resultData[0].filteredData.filter((word:any) => word.role === 'BPO');
-    this.resultData.paginator = this.paginator;
-    console.log("ngOnInit",this.resultData)
+  }
 
-    // this.dataSource.paginator = this.paginator;
+  getTableData(){
+  // const result = words.filter(word => word.length > 6);
+  //Table list Data
+  this.resultData.push(this.dataSource);
+  console.log("ngOnInit",this.resultData)
 
+  // this.resultData = this.resultData[0].filteredData.filter((word:any) => word.role === 'BPO');
+  this.resultData = this.resultData[0].filteredData
+  this.resultData.paginator = this.paginator;
+  console.log("ngOnInit",this.resultData)
+
+  // this.dataSource.paginator = this.paginator;
+  }
+
+  filterData(event:any){
+    console.log("filter",event.target.value.length)
+
+    if(event.target.value.length > 2){
+
+      this.resultData = this.resultData.filter((word:any) => word.role.toLowerCase().startsWith((event.target.value).toLowerCase()));
+      this.resultData.paginator = this.paginator;
+    console.log("filter--value",event.target.value)
+    console.log("filter--resultData",this.resultData)
+
+
+    }
+    else if(event.target.value.length < 1){
+      this.resultData = [];
+      this.resultData.push(this.dataSource);
+      this.resultData = this.resultData[0].filteredData
+      this.resultData.paginator = this.paginator;
+    }
+    
 
   }
 

@@ -6,12 +6,14 @@ import { MaterialModule } from './material-module/material/material.module';
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { AppRoutingModule } from './app.routing.module';
 import { TableViewPageComponent } from './components/table-view-page/table-view-page.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableViewComponent,
-    TableViewPageComponent
+    TableViewPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
