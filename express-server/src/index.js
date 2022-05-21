@@ -2,13 +2,20 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 3000
+const loginRouter = require('./api/login');
 
+const middleWare = (req, res, next) => {
+  console.log("running the middleware for",req.method, req.url)
+  next();
+}
+app.use(middleWare);
+app.use(loginRouter);
 app.use(cors())
-app.get('/login', (req, res) => {
-  res.json({
-      "statuscode": 200,
-      "statusmessage":"success"
-  })
+app.get('/', (req, res) => {
+  res.setHeader('X-Foo', 'bar');
+  res.setHeader('Content-Type', 'text/plain');
+  res.json('welcome.!');
+ 
 })
 
 app.listen(port, () => {

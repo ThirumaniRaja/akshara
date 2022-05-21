@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit,ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-table-view-page',
@@ -8,8 +9,15 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./table-view-page.component.scss']
 })
 export class TableViewPageComponent implements OnInit, AfterViewInit  {
+
+
+
+
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
+   
+
   }
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];

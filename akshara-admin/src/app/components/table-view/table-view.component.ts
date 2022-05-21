@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { PeriodicElement } from 'src/app/models/tableData';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AppService } from 'src/app/services/app.service';
 
 
 
@@ -38,7 +39,9 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'role', 'location', 'organization','gender','vacany','requirement'];
   // dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private appService : AppService){
+
+  }
 
   ngAfterViewInit() {
     console.log("ngAfterViewInit")
@@ -50,6 +53,9 @@ export class TableViewComponent implements OnInit, AfterViewInit {
     console.log("ngOnInit")
   
     this.getTableData()
+    this.appService.getData().subscribe(res=>{
+      console.log("res",res)
+    })
 
   }
 

@@ -1,16 +1,21 @@
 const express = require('express')
+const router = express.Router();
 // const cors = require('cors')
-const app = express()
-const port = 3000
+
+
+// const app = express()
+const port = 3000;
 
 // app.use(cors())
-app.get('/login', (req, res) => {
-  res.json({
+router.get('/login', async (req, res) => {
+ await res.json({
       "statuscode": 200,
       "statusmessage":"success"
   })
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// router.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+
+module.exports = router
