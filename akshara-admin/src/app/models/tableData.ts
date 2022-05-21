@@ -10,5 +10,10 @@ export interface PeriodicElement {
       closingdate?:string;
       describtion?:string;
 
+      position?:number;
+      name?:string;
+      weight?:number;
+      symbol?:string;
+
     }
     

@@ -2,3 +2,33 @@ table {
     width: 100%;
   }
   
+
+  .table-header{
+    display: flex;
+    margin: 18px;
+  }
+
+  .table-title{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    // font-size: 20px;
+    line-height: 32px;
+    margin: 0px !important;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    // font-family: myfont;
+    // color: var($teal-palette);
+    color: var(--teal-palette)
+  }
+
+  .table-search{
+    border-radius: 5px;
+    margin-left: 15px;
+    width: 90%;
+  }
+
+  

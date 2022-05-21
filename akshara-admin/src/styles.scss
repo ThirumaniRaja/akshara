@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import './custom-theme.scss';
+
+@font-face {
+    font-family: myfont;
+    src: url(/assets/fonts/2sDfZG1Wl4LcnbuKgE0mV0Q.woff2) format("truetype");
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+    --teal-palette : #004d40;
+}
