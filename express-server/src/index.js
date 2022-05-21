@@ -1,9 +1,14 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.use(cors())
+app.get('/login', (req, res) => {
+  res.json({
+      "statuscode": 200,
+      "statusmessage":"success"
+  })
 })
 
 app.listen(port, () => {

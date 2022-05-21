@@ -7,6 +7,7 @@ import { TableViewComponent } from './components/table-view/table-view.component
 import { AppRoutingModule } from './app.routing.module';
 import { TableViewPageComponent } from './components/table-view-page/table-view-page.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
 
   ],
   providers: [],
