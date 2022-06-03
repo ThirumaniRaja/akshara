@@ -10,7 +10,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class TableViewPageComponent implements OnInit, AfterViewInit  {
 
-
+abc: any;
 
 
 
