@@ -9,6 +9,7 @@ const middleWare = (req, res, next) => {
   next();
 }
 app.use(middleWare);
+app.use(express.json())
 app.use(loginRouter);
 app.use(cors())
 app.get('/', (req, res) => {
