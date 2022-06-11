@@ -6,12 +6,18 @@
     background-color: var(--teal-palette);
 }
 
+h2{
+    color: var(--teal-palette);
+    font-weight: bold;
+    font-family: myfont;
+}
+
 
 .login-container{
     position: fixed;
     top: 25%;
     left: 35%;
-    height: 40%;
+    height: 45%;
     // display: flex;
     width: 30%;
     padding: 20px;
@@ -34,5 +40,19 @@
     border-radius: 5px;
     height: 30px;
     opacity: 0.5;
-    padding: 5px;
+    padding: 10px;
+    margin: 10px;
+    color: #000000;
+}
+
+.form-btn{
+    width: 85%;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    color: #fff;
+    background-color: var(--teal-palette);
+    font-weight: bold;
 }
