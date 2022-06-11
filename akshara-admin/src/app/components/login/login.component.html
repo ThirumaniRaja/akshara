@@ -4,14 +4,14 @@
     <div class="login-form">
          <form  [formGroup]="form"(ngSubmit)="onLogin()">
              <div class="form-field">
-                 <div><label>user name:</label></div>
-                 <input class="form-field-input" type="text" formControlName="username" placeholder="abc@gmail.com">
+                 <!-- <div><label>user name:</label></div> -->
+                 <input class="form-field-input" type="text" formControlName="username" placeholder="User Name">
              </div>
              <div class="form-field">
-                 <div><label>password:</label></div>
-                <input class="form-field-input" type="password" formControlName="password" placeholder="">
+                 <!-- <div><label>password:</label></div> -->
+                <input class="form-field-input" type="password" formControlName="password" placeholder="Password">
             </div>
-            <button type="submit" [disabled]="!form.valid">login</button>
+            <button class="form-btn" type="submit" [disabled]="!form.valid">Sign In</button>
          </form>
     </div>
 
